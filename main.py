@@ -26,7 +26,7 @@ def analizar():
     print(area_texto.get(1.0, END))
 
     nuevo_analizador = Analizador()
-    
+
 
 
 
