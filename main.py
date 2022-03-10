@@ -35,7 +35,8 @@ Ventana_principal = Tk()
 Ventana_principal.title("Analizador léxico")
 Ventana_principal.configure(width=1000, height=800)
 Ventana_principal.resizable(False, False)
-Ventana_principal.eval('tk::PlaceWindow %s center' % Ventana_principal.winfo_pathname(Ventana_principal.winfo_id()))
+#Ventana_principal.eval('tk::PlaceWindow %s center' % Ventana_principal.winfo_pathname(Ventana_principal.winfo_id()))
+Ventana_principal.eval('tk::PlaceWindow . center')
 # Creando botones
 mi_fuente = font.Font(family='Helvetica', size=15)
 
