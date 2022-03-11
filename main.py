@@ -24,10 +24,8 @@ def opcion_seleccionada():
 
 def analizar():
     print(area_texto.get(1.0, END))
-
     nuevo_analizador = Analizador()
-
-
+    nuevo_analizador.analizar(area_texto.get(1.0, END))
 
 
 # Info sobre la ventana
@@ -35,7 +33,7 @@ Ventana_principal = Tk()
 Ventana_principal.title("Analizador léxico")
 Ventana_principal.configure(width=1000, height=800)
 Ventana_principal.resizable(False, False)
-#Ventana_principal.eval('tk::PlaceWindow %s center' % Ventana_principal.winfo_pathname(Ventana_principal.winfo_id()))
+# Ventana_principal.eval('tk::PlaceWindow %s center' % Ventana_principal.winfo_pathname(Ventana_principal.winfo_id()))
 Ventana_principal.eval('tk::PlaceWindow . center')
 # Creando botones
 mi_fuente = font.Font(family='Helvetica', size=15)
