@@ -26,6 +26,8 @@ def analizar():
     print(area_texto.get(1.0, END))
     nuevo_analizador = Analizador()
     nuevo_analizador.analizar(area_texto.get(1.0, END))
+    nuevo_analizador.imprimir_tokens()
+    nuevo_analizador.imprimir_errores()
 
 
 # Info sobre la ventana
