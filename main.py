@@ -2,13 +2,14 @@ import tkinter
 from tkinter import *
 import tkinter.font as font
 from tkinter import filedialog
+
+import Crea_Form
 from Analizador import Analizador
 
 lista_opciones = ["Manual de usuario", "Manual técnico", "Reporte de tokens", "Reporte de errores"]
 
 
 def carga_archivo():
-    print("hey")
     ruta = filedialog.askopenfilename(title="Selecciona un archivo", initialdir="/",
                                       filetypes=(("form files", "*.form"), ("", "")))
     archivo = open(ruta, "r")
@@ -28,6 +29,7 @@ def analizar():
     nuevo_analizador.analizar(area_texto.get(1.0, END))
     nuevo_analizador.imprimir_tokens()
     nuevo_analizador.imprimir_errores()
+    Crea_Form.hallar_elemento(nuevo_analizador.listaTokens)
 
 
 # Info sobre la ventana

@@ -32,7 +32,7 @@ class Analizador:
         self.buffer = ""
 
     def agrega_error(self, caracter, linea, columna):
-        self.listaErrores.append(Error("Caracter: " + caracter + "desconocido", linea, columna))
+        self.listaErrores.append(Error("Caracter: " + caracter + " desconocido", linea, columna))
 
     def q0(self, caracter):
         if caracter == "[":
@@ -85,8 +85,6 @@ class Analizador:
             self.buffer += caracter
             self.columna += 1
 
-
-
         elif caracter == " ":
             self.columna += 1
 
@@ -102,12 +100,12 @@ class Analizador:
         else:
             self.agrega_error(caracter, self.linea, self.columna)
 
-    def q1(self, caracter):
+    def q1(self):
         self.agrega_token(self.buffer, self.linea, self.columna, "Corchete izquierdo")
         self.estado = 0
         self.i -= 1
 
-    def q2(self, caracter):
+    def q2(self):
         self.agrega_token(self.buffer, self.linea, self.columna, "Corchete derecho")
         self.estado = 0
         self.i -= 1
@@ -127,27 +125,27 @@ class Analizador:
                 self.estado = 0
                 self.i -= 1
 
-    def q4(self, caracter):
+    def q4(self):
         self.agrega_token(self.buffer, self.linea, self.columna, "Signo menor")
         self.estado = 0
         self.i -= 1
 
-    def q5(self, caracter):
+    def q5(self):
         self.agrega_token(self.buffer, self.linea, self.columna, "Signo mayor")
         self.estado = 0
         self.i -= 1
 
-    def q6(self, caracter):
+    def q6(self):
         self.agrega_token(self.buffer, self.linea, self.columna, "Signo dos puntos")
         self.estado = 0
         self.i -= 1
 
-    def q7(self, caracter):
+    def q7(self):
         self.agrega_token(self.buffer, self.linea, self.columna, "Coma")
         self.estado = 0
         self.i -= 1
 
-    def q8(self, caracter):
+    def q8(self):
         self.agrega_token(self.buffer, self.linea, self.columna, "Virgulilla")
         self.estado = 0
         self.i -= 1
@@ -182,7 +180,6 @@ class Analizador:
         self.agrega_token(self.buffer, self.linea, self.columna, "valor string")
         self.estado = 0
 
-
     def analizar(self, cadena):
         self.listaTokens = []
         self.listaErrores = []
@@ -195,21 +192,21 @@ class Analizador:
             if self.estado == 0:
                 self.q0(cadena[self.i])
             elif self.estado == 1:
-                self.q1(cadena[self.i])
+                self.q1()
             elif self.estado == 2:
-                self.q2(cadena[self.i])
+                self.q2()
             elif self.estado == 3:
                 self.q3(cadena[self.i])
             elif self.estado == 4:
-                self.q4(cadena[self.i])
+                self.q4()
             elif self.estado == 5:
-                self.q5(cadena[self.i])
+                self.q5()
             elif self.estado == 6:
-                self.q6(cadena[self.i])
+                self.q6()
             elif self.estado == 7:
-                self.q7(cadena[self.i])
+                self.q7()
             elif self.estado == 8:
-                self.q8(cadena[self.i])
+                self.q8()
             elif self.estado == 9:
                 self.q9(cadena[self.i])
             elif self.estado == 10:
