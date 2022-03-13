@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<h2>Formulario generado:</h2>
+<form>
+<label>NOmbre:</label><br>
+<input type="text" name="texto"  placeholder="ingrese ####nombre" value="Nombre:"><br><br><br>
+<label>sexo</label><br><input type="radio"  name="radio" value="Masculino">
+<label for="Masculino">Masculino</label>
+<input type="radio"  name="radio" value="Femenino">
+<label for="Femenino">Femenino</label>
+<input type="radio"  name="radio" value="Trans">
+<label for="Trans">Trans</label>
+<input type="radio"  name="radio" value="x">
+<label for="x">x</label>
+<br><br><br><label for = "pais">pais </label><select name = "pais">
+<option>Guatemala</option>
+<option>El salvador</option>
+<option>Honduras</option>
+</select><br><br><br><button type = "button" id = "entrada"> Valor</button></form>
+
+<script src = "https://code.jquery.com/jquery-3.6.0.min.js"></script>  <script>
+    
+    
+    $(document).ready(function() {
+    $("#info").click(function(){
+    console.log("hey yo soy info")
+     
+        
+        $('#serializearray').text(        
+            array = ($('form').serializeArray())
+            
+        );
+        console.log(array)
+        var cadena = ""
+        for (let step = 0; step < array.length; step++) {
+        cadena = cadena + array[step].value + "<br>"
+}
+			
+    var element = document.getElementById("ifrm");
+
+    if(typeof(element) != 'undefined' && element != null){
+        document.getElementById('ifrm').src = "data:text/html;charset=utf-8," + cadena;
+    } else{
+        var ifrm = document.createElement('iframe');
+		ifrm.setAttribute('id', 'ifrm');
+		document.body.appendChild(ifrm); 
+    document.getElementById('ifrm').src = "data:text/html;charset=utf-8," + cadena;
+    }
+				
+        
+   
+    }); 
+    
+    
+    
+    
+    $("#entrada").click(function(){
+    console.log("hey yo soy entrada")
+    var element = document.getElementById("ifrm");
+        
+        if(typeof(element) != 'undefined' && element != null){
+        element.setAttribute("width", "1000px")
+		element.setAttribute("height", "500px")
+		element.open()
+        element.close()
+        element.contentDocument.write(`formulario ~>> [
+	
+	<
+		tipo: "etiqueta",
+		valor: "NOmbre:"
+$
+	
+	>,
+	
+	<
+		tipo: "texto",
+		valor: "Nombre:",
+		fondo: "ingrese ####nombre"
+	>,
+	
+	<
+		tipo: "grupo-radio",
+		nombre: "sexo",
+		valores: ['Masculino', 'Femenino', 'Trans', "x"]
+	>,
+	
+	<
+		tipo: "grupo-option",
+		nombre: "pais",
+		valores: ['Guatemala', 'El salvador', 'Honduras']
+	>,
+	
+	<
+		/tipo: "boton",
+		valor: "Valor",
+		evento: "entrada"
+	>
+]
+
+`)          
+    } else{
+        var ifrm = document.createElement('iframe');
+		ifrm.setAttribute('id', 'ifrm');
+		ifrm.setAttribute("width", "1000px")
+		ifrm.setAttribute("height", "500px")
+		document.body.appendChild(ifrm); 
+    ifrm.contentDocument.write(`formulario ~>> [
+	
+	<
+		tipo: "etiqueta",
+		valor: "NOmbre:"
+$
+	
+	>,
+	
+	<
+		tipo: "texto",
+		valor: "Nombre:",
+		fondo: "ingrese ####nombre"
+	>,
+	
+	<
+		tipo: "grupo-radio",
+		nombre: "sexo",
+		valores: ['Masculino', 'Femenino', 'Trans', "x"]
+	>,
+	
+	<
+		tipo: "grupo-option",
+		nombre: "pais",
+		valores: ['Guatemala', 'El salvador', 'Honduras']
+	>,
+	
+	<
+		/tipo: "boton",
+		valor: "Valor",
+		evento: "entrada"
+	>
+]
+
+`) 
+    }
+        
+    }); 
+    
+});
+
+
+
+    
+
+     </script></body>
+</html>

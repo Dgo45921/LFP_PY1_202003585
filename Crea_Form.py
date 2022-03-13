@@ -1,11 +1,15 @@
+import FileWriter
+
 inicio_encontrado = False
 final_encontrado = False
 
 lista_diccionarios = []
+texto_archivo = ""
 
 
 def hallar_elemento(lista_tokens):
-    global inicio_encontrado, final_encontrado
+    global inicio_encontrado, final_encontrado, lista_diccionarios
+    lista_diccionarios = []
 
     indice_primero = 0
     indice_final = 0
@@ -22,6 +26,12 @@ def hallar_elemento(lista_tokens):
             filtrar_tipo(lista_tokens[indice_primero + 1:indice_final])
             inicio_encontrado = False
             final_encontrado = False
+
+
+    FileWriter.crear_html(lista_diccionarios, texto_archivo)
+
+
+
 
 
 def filtrar_tipo(sublista):

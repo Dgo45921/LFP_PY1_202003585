@@ -2,9 +2,10 @@ import tkinter
 from tkinter import *
 import tkinter.font as font
 from tkinter import filedialog
-
-import Crea_Form
 from Analizador import Analizador
+import Crea_Form
+
+texto_archivo = ""
 
 lista_opciones = ["Manual de usuario", "Manual técnico", "Reporte de tokens", "Reporte de errores"]
 
@@ -24,7 +25,10 @@ def opcion_seleccionada():
 
 
 def analizar():
+    global texto_archivo
+    texto_archivo = area_texto.get(1.0, END)
     print(area_texto.get(1.0, END))
+    Crea_Form.texto_archivo = texto_archivo
     nuevo_analizador = Analizador()
     nuevo_analizador.analizar(area_texto.get(1.0, END))
     nuevo_analizador.imprimir_tokens()
