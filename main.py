@@ -28,11 +28,12 @@ def opcion_seleccionada():
     global texto_analizado
     print(valor_seleccionado.get())
     if valor_seleccionado.get() == "Manual de usuario":
-        print("se imprime manual de usuario")
+        #print("se imprime manual de usuario")
         os.system('firefox Documentación/user.pdf')
         return
     if valor_seleccionado.get() == "Manual técnico":
-        print("se imprime manual tecnico")
+        #print("se imprime manual tecnico")
+        os.system('firefox Documentación/tecnico.pdf')
         return
     if valor_seleccionado.get() == "Reporte de tokens" and texto_analizado or valor_seleccionado.get() == "Reporte de errores" and texto_analizado:
         if valor_seleccionado.get() == "Reporte de tokens":
