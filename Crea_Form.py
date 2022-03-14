@@ -153,7 +153,7 @@ def tipo_grupo_opcion(sublista):
 
     nuevo_diccionario = {"tipo": "grupo-option", "nombre": nombre, "valores": valores}
     lista_diccionarios.append(nuevo_diccionario)
-    print(lista_diccionarios)
+    #print(lista_diccionarios)
 
 
 def tipo_boton(sublista):

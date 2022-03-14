@@ -1,3 +1,4 @@
+import os
 import tkinter
 from tkinter import *
 import tkinter.font as font
@@ -6,6 +7,7 @@ from tkinter import filedialog, messagebox
 import FileWriter
 from Analizador import Analizador
 import Crea_Form
+
 nuevo_analizador = Analizador()
 texto_archivo = ""
 lista_opciones = ["Manual de usuario", "Manual técnico", "Reporte de tokens", "Reporte de errores"]
@@ -27,6 +29,7 @@ def opcion_seleccionada():
     print(valor_seleccionado.get())
     if valor_seleccionado.get() == "Manual de usuario":
         print("se imprime manual de usuario")
+        os.system('firefox Documentación/user.pdf')
         return
     if valor_seleccionado.get() == "Manual técnico":
         print("se imprime manual tecnico")
@@ -41,17 +44,14 @@ def opcion_seleccionada():
         messagebox.showinfo(title="Error", message="Ingrese un texto a analizar antes de generar un reporte")
 
 
-
-
-
 def analizar():
     global texto_archivo, nuevo_analizador, texto_analizado
     texto_archivo = area_texto.get(1.0, END)
-    print(area_texto.get(1.0, END))
+    # print(area_texto.get(1.0, END))
     Crea_Form.texto_archivo = texto_archivo
     nuevo_analizador.analizar(area_texto.get(1.0, END))
-    nuevo_analizador.imprimir_tokens()
-    nuevo_analizador.imprimir_errores()
+    # nuevo_analizador.imprimir_tokens()
+    # nuevo_analizador.imprimir_errores()
     Crea_Form.hallar_elemento(nuevo_analizador.listaTokens)
     texto_analizado = True
 

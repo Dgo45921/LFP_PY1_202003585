@@ -2,16 +2,12 @@
 <html>
 <h2>Formulario generado:</h2>
 <form>
-<label>NOmbre:</label><br>
+<label>Nombre:</label><br>
 <input type="text" name="texto"  placeholder="ingrese ####nombre" value="Nombre:"><br><br><br>
 <label>sexo</label><br><input type="radio"  name="radio" value="Masculino">
 <label for="Masculino">Masculino</label>
 <input type="radio"  name="radio" value="Femenino">
 <label for="Femenino">Femenino</label>
-<input type="radio"  name="radio" value="Trans">
-<label for="Trans">Trans</label>
-<input type="radio"  name="radio" value="x">
-<label for="x">x</label>
 <br><br><br><label for = "pais">pais </label><select name = "pais">
 <option>Guatemala</option>
 <option>El salvador</option>
@@ -67,8 +63,8 @@
 	
 	<
 		tipo: "etiqueta",
-		valor: "NOmbre:"
-$
+	#	valor: "Nombre:"
+
 	
 	>,
 	
@@ -81,7 +77,7 @@ $
 	<
 		tipo: "grupo-radio",
 		nombre: "sexo",
-		valores: ['Masculino', 'Femenino', 'Trans', "x"]
+		valores: ['Masculino', 'Femenino']
 	>,
 	
 	<
@@ -89,9 +85,9 @@ $
 		nombre: "pais",
 		valores: ['Guatemala', 'El salvador', 'Honduras']
 	>,
-	
+	?
 	<
-		/tipo: "boton",
+		tipo: "boton",
 		valor: "Valor",
 		evento: "entrada"
 	>
@@ -108,8 +104,8 @@ $
 	
 	<
 		tipo: "etiqueta",
-		valor: "NOmbre:"
-$
+	#	valor: "Nombre:"
+
 	
 	>,
 	
@@ -122,7 +118,7 @@ $
 	<
 		tipo: "grupo-radio",
 		nombre: "sexo",
-		valores: ['Masculino', 'Femenino', 'Trans', "x"]
+		valores: ['Masculino', 'Femenino']
 	>,
 	
 	<
@@ -130,9 +126,9 @@ $
 		nombre: "pais",
 		valores: ['Guatemala', 'El salvador', 'Honduras']
 	>,
-	
+	?
 	<
-		/tipo: "boton",
+		tipo: "boton",
 		valor: "Valor",
 		evento: "entrada"
 	>

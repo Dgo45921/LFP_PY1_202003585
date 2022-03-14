@@ -95,7 +95,7 @@ class Analizador:
         elif caracter == "\t":
             self.columna += 8
 
-        elif caracter == "#":
+        elif caracter == "$":
             print("fin del análisis")
         else:
             self.agrega_error(caracter, self.linea, self.columna)
@@ -186,7 +186,7 @@ class Analizador:
         self.linea = 1
         self.columna = 1
         self.i = 0
-        cadena += "#"
+        cadena += "$"
 
         while self.i < len(cadena):
             if self.estado == 0:
